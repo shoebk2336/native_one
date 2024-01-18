@@ -1,29 +1,36 @@
-import {  Text,Button, Alert, View, TextInput, Image } from "react-native"
+import {  Text,Button, Alert, View, TextInput, Image,StyleSheet, SafeAreaView } from "react-native"
 
-export const Home=()=>{
-    return (<>
-        <Text>Home page</Text>
-        <Button title="Press me "
-        onPress={()=>console.warn('pressed')}
-        />        
+export const Home=({navigation})=>{
+    return (
+        <SafeAreaView
+        style={{
+            marginTop:50
+        }}
+        >
         <View
         style={{
-            backgroundColor:"blue",
+            
             padding:10
         }}
         >
-        <TextInput placeholder="Enter Name"
+        
+        <TextInput placeholder="Search"/>
+        </View>
+        <View>
+        <Text
         style={{
-            color:"white",
-            borderWidth:2,
-            borderColor:"red"
-            
-            
+            fontSize:40,
+            fontWeight:"bold",
+            textAlign:"center"
         }}
+        >Welcome to Amaze Villa</Text>
+        <Image source={{uri:"https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png"}}
+        style={{width:400,height:400}}
         />
         </View>
-        <Image source={{uri:"https://youtooz.com/cdn/shop/products/avatar-avatarstateaang_1000x1000_min-oj40.png?v=1650324185"}}
-        style={{width: 400, height: 400}}
-        />
-        </>)
+        <Button title='Navigate' onPress={()=>navigation.navigate('Menu')}/>
+        </SafeAreaView>
+        
+        )
 }
+

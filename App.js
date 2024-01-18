@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import { Home } from './pages/Home/Home';
-import { Button, ButtonText } from '@gluestack-ui/themed';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { NativeNavigator } from './components/navigator';
 export default function App() {
 
   
   return (
-    <View >
-    <Home/>
-    </View>
+    <NavigationContainer>
+    <NativeNavigator/>
+    </NavigationContainer>
   );
 }
 
